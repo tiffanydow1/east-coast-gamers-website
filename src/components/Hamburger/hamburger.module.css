@@ -1,0 +1,25 @@
+.button {
+  height: 100%;
+  padding: 0 8px;
+  margin: 0;
+  background: transparent;
+  border: none;
+  width: 32px;
+}
+
+.hamburger, .times {
+  width: 30px;
+  height: 30px;
+}
+
+.hamburgerHidden {
+  display: none;
+}
+
+.times {
+  display: none;
+}
+
+.timesActive {
+  display: block;
+}

@@ -1,10 +1,24 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 
+import HeroImage from '@/components/HeroImage/HeroImage';
+import About from '@/components/About/About';
+import FeaturedProducts from '@/components/FeaturedProducts/FeaturedProducts';
+import Collections from '@/components/Collections/Collections';
+import Categories from '@/components/Categories/Categories';
+import Faqs from '@/components/Faqs/Faqs';
+
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <p>East Coast Gamers - Homepage</p>
-    </main>
+    <>
+      <HeroImage />
+      <main className={styles.main}>
+        <About />
+        <FeaturedProducts />
+        <Collections />
+        <Categories />
+        <Faqs />
+      </main>
+    </>
   );
 }

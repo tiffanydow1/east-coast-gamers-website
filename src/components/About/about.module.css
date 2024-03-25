@@ -1,0 +1,57 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+}
+
+.leftCol {
+  width: 50%;
+}
+
+.leftCol h1, .leftCol p, .leftCol ul {
+  margin-bottom: 32px;
+}
+
+.leftCol ul {
+  list-style: inside;
+}
+
+.leftCol li {
+  margin-bottom: 16px;
+}
+
+.rightCol {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+}
+
+.rightCol .image {
+  width: 500px;
+  height: auto;
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .container h1 {
+    font-size: 25px;
+  }
+
+  .leftCol {
+    margin-bottom: 32px;
+  }
+
+  .leftCol, .rightCol {
+    width: 100%;
+  }
+
+  .rightCol .image {
+    width: 350px;
+  }
+}

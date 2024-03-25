@@ -4,7 +4,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 6rem;
-  min-height: 100vh;
+  min-height: 50vh;
+  background-color: var(--darkBlue);
 }
 
 .description {
@@ -127,7 +128,10 @@
 }
 
 /* Mobile */
-@media (max-width: 700px) {
+@media (max-width: 768px) {
+  .main {
+    padding: 2rem;
+  }
   .content {
     padding: 4rem;
   }

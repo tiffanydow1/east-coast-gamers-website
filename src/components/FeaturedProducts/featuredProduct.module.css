@@ -1,0 +1,44 @@
+.container {
+  width: 90%;
+  margin-top: 96px;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  grid-template-rows: repeat(2, auto); /* 2 rows */
+  gap: 20px;
+  margin-top: 32px;
+}
+
+.imageContainer {
+  padding: 24px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+    margin-top: 65px;
+  }
+
+  .flex h1 {
+    margin-bottom: 8px;
+    font-size: 25px;
+  }
+
+  .flex button {
+    display: none;
+  }
+
+  .gridContainer {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, auto);
+  }
+}

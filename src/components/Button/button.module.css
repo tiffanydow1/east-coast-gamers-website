@@ -1,0 +1,35 @@
+.outlined {
+  display: block;
+  margin: 0;
+  background: transparent;
+  border: 2px solid var(--white);
+  padding: 16px 32px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.outlined:hover {
+  background: var(--purple);
+  border: 2px solid var(--purple);
+}
+
+.solid {
+  display: block;
+  height: 100%;
+  margin: 0;
+  background: var(--purple);
+  border: 2px solid var(--purple);
+  padding: 16px 32px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.solid:hover {
+  border: 2px solid var(--white);
+  color: var(--purple);
+  background: var(--white);
+}

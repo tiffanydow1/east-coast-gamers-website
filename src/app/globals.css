@@ -1,4 +1,15 @@
 :root {
+  /* --purple: #A855F7; */
+  --purple: #0000FF;
+  --darkBlue: #050A30;
+  --navyBlue: #000C66;
+  --blue: #0000FF;
+  --babyBlue: #7EC8E3;
+  --yellow: #EFF979;
+  --charcoal: #1F2937;
+  --mauve: #C1A5A9;
+  --black: #333333;
+  --white: #fefefe;
   --max-width: 1100px;
   --border-radius: 12px;
   --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
@@ -87,12 +98,7 @@ body {
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: var(--black);
 }
 
 a {
