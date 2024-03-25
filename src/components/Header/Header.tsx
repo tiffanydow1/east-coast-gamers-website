@@ -49,9 +49,7 @@ const Header = () => {
           />
         </div>
 
-        <DesktopNavbar
-          onLinkClick={toggleSidebar}
-        />
+        <DesktopNavbar />
 
         <MobileNavBar
           active={sidebar}
