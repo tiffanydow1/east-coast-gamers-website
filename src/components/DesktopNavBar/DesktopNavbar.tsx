@@ -97,23 +97,34 @@ const NAVIGATION = [
   },
 ];
 
-const DesktopNavbar = ({
-  active,
-  category,
-  location,
-  cart,
+interface PrimaryMenuItem {
+  URL: string;
+  label: string;
+  menu?: SecondaryMenuItem[];
+}
+
+interface SecondaryMenuItem {
+  URL: string;
+  label: string;
+}
+
+interface DesktopNavbarProps {
+  onLinkClick: (event: React.MouseEvent<HTMLAnchorElement>) => void;
+}
+
+const DesktopNavbar: React.FC<DesktopNavbarProps> = ({
   onLinkClick
 }) => {
-  const [currentMenu, setCurrentMenu] = useState('primary');
-  const [accordianActive, setAccordianActive] = useState({});
-  const [activePrimary, setActivePrimary] = useState(null);
+  const [currentMenu, setCurrentMenu] = useState<string>('primary');
+  const [accordianActive, setAccordianActive] = useState<{ [key: string]: boolean }>({});
+  const [activePrimary, setActivePrimary] = useState<string | null>(null);
 
-  const refs = {};
+  const refs: { [key: string]: React.RefObject<HTMLDivElement> } = {};
 
   return (
     <div className={styles.nav}>
       <div className={styles.primaryMenu}>
-        {NAVIGATION.map(primary => (
+        {NAVIGATION.map((primary: PrimaryMenuItem) => (
           <div key={primary.URL} className={styles.primaryGroup}>
             <div className={styles.menuItem}>
               <Link
@@ -129,7 +140,7 @@ const DesktopNavbar = ({
 
             {primary.menu && (
               <div className={styles.secondaryMenu}>
-                {primary.menu.map(secondary => (
+                {primary.menu.map((secondary: SecondaryMenuItem) => (
                   <div
                     key={secondary.URL}
                     className={styles.secondaryGroup}
