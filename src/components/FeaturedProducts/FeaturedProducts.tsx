@@ -7,7 +7,16 @@ import styles from './featuredProduct.module.css';
 
 import imgSrc from '../../../public/tshirt.jpg';
 
-const sampleProducts = [
+interface Product {
+  id: number;
+  name: string;
+  price: string;
+  url: string;
+  image: typeof imgSrc;
+  variant: string;
+}
+
+const sampleProducts: Product[] = [
   {
     id: 1,
     name: 'Sample Product 1',
@@ -74,7 +83,7 @@ const sampleProducts = [
   },
 ];
 
-const FeaturedProducts = () => {
+const FeaturedProducts: React.FC = () => {
   const router = useRouter();
 
   return (

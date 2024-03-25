@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import styles from './productCard.module.css';
 
 import Button from '@/components/Button/Button';
@@ -11,7 +11,7 @@ interface ProductCardProps {
   name: string;
   price: string;
   url: string;
-  image: string;
+  image: StaticImageData;
   variant: string;
 }
 
