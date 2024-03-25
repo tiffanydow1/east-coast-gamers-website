@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useRef, useContext } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import styles from './desktopNavbar.module.css';
 
@@ -108,13 +108,7 @@ interface SecondaryMenuItem {
   label: string;
 }
 
-interface DesktopNavbarProps {
-  onLinkClick: (event: React.MouseEvent<HTMLAnchorElement>) => void;
-}
-
-const DesktopNavbar: React.FC<DesktopNavbarProps> = ({
-  onLinkClick
-}) => {
+const DesktopNavbar: React.FC = () => {
   const [currentMenu, setCurrentMenu] = useState<string>('primary');
   const [accordianActive, setAccordianActive] = useState<{ [key: string]: boolean }>({});
   const [activePrimary, setActivePrimary] = useState<string | null>(null);
@@ -130,7 +124,6 @@ const DesktopNavbar: React.FC<DesktopNavbarProps> = ({
               <Link
                 key={primary.URL}
                 href={primary.URL}
-                onClick={(event) => onLinkClick(event)}
               >
                 <div className={styles.textWrapper}>
                   <p className={styles.menuItemText}>{primary.label}</p>
@@ -149,7 +142,6 @@ const DesktopNavbar: React.FC<DesktopNavbarProps> = ({
                       <Link
                         key={secondary.URL}
                         href={secondary.URL}
-                        onClick={(event) => onLinkClick(event)}
                         >
                           <div className={styles.textWrapper}>
                             <p className={styles.secondaryMenuItemText}>{secondary.label}</p>
