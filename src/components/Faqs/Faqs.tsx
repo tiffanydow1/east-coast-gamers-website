@@ -6,10 +6,10 @@ import { HiOutlineMail } from "react-icons/hi";
 import styles from './faqs.module.css';
 import { questions } from './questions';
 
-const Faqs = () => {
-  const [activeSection, setActiveSection] = useState(questions[0].section);
+const Faqs: React.FC = () => {
+  const [activeSection, setActiveSection] = useState<string | null>(questions[0].section);
 
-  const setExpanded = (active) => {
+  const setExpanded = (active: string) => {
     if (active === activeSection) {
       setActiveSection(null);
     } else {
