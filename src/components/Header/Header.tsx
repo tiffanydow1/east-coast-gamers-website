@@ -14,7 +14,7 @@ import SearchBar from '@/components/SearchBar/SearchBar';
 
 const Header = () => {
   const [showSearch, setShowSearch] = useState<boolean>(false);
-  const [sidebar, setSidebar] = useState(false);
+  const [sidebar, setSidebar] = useState<boolean>(false);
 
   const openSearch = () => {
     setShowSearch(true);
