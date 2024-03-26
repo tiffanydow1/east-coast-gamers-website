@@ -80,7 +80,7 @@
   top: 100px;
   display: none;
   flex-direction: column;
-  background-color: var(--charcoal);
+  background-color: var(--black);
   border: 1px solid var(--white);
   border-radius: 5px;
 }
