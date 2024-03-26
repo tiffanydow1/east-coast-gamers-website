@@ -8,7 +8,26 @@ import { FaChevronLeft, FaChevronRight, FaTimes } from "react-icons/fa";
 import styles from './mobileNavBar.module.css';
 import imgSrc from '../../../images/ecg-logo.webp';
 
-const NAVIGATION = [
+interface MenuItem {
+  label: string;
+  URL: string;
+  category: string;
+  categories: Array<string>;
+  menu?: SecondaryMenuItem[];
+}
+
+interface SecondaryMenuItem {
+  label: string;
+  URL: string;
+  category: string;
+}
+
+interface MobileNavBarProps {
+  active: boolean;
+  onLinkClick: (event: React.MouseEvent<any, MouseEvent>) => void;
+}
+
+const NAVIGATION: MenuItem[] = [
   {
     label: 'Apparel',
     URL: '/apparel',
@@ -101,9 +120,9 @@ const NAVIGATION = [
   },
 ];
 
-const MobileNavBar = ({ active, onLinkClick }) => {
-  const [currentMenu, setCurrentMenu] = useState('primary');
-  const [activePrimary, setActivePrimary] = useState(null);
+const MobileNavBar: React.FC<MobileNavBarProps> = ({ active, onLinkClick }) => {
+  const [currentMenu, setCurrentMenu] = useState<string>('primary');
+  const [activePrimary, setActivePrimary] = useState<string | null>(null);
 
   return (
     <div className={`${styles.container} ${active ? styles.active : ''}`}>
