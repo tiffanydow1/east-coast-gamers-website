@@ -40,6 +40,58 @@ const Product = () => {
   return (
     <div className={styles.container}>
       <div className={styles.flexContainer}>
+        <div className={styles.rightCol}>
+          <div className={styles.imageContainer}>
+            <Image
+              src={imgSrc}
+              alt="Product Image"
+              className={styles.image}
+            />
+          </div>
+
+          <div className={styles.imagesRow}>
+            <button className={styles.transparentButton} onClick={() => handleSelectedPhoto}>
+              <Image
+                src={imgSrc}
+                alt="Product Image"
+                className={styles.miniImage}
+              />
+            </button>
+
+            <button className={styles.transparentButton} onClick={() => handleSelectedPhoto}>
+              <Image
+                src={imgSrc}
+                alt="Product Image"
+                className={styles.miniImage}
+              />
+            </button>
+
+            <button className={styles.transparentButton} onClick={() => handleSelectedPhoto}>
+              <Image
+                src={imgSrc}
+                alt="Product Image"
+                className={styles.miniImage}
+              />
+            </button>
+
+            <button className={styles.transparentButton} onClick={() => handleSelectedPhoto}>
+              <Image
+                src={imgSrc}
+                alt="Product Image"
+                className={styles.miniImage}
+              />
+            </button>
+
+            <button className={styles.transparentButton} onClick={() => handleSelectedPhoto}>
+              <Image
+                src={imgSrc}
+                alt="Product Image"
+                className={styles.miniImage}
+              />
+            </button>
+          </div>
+        </div>
+
         <div className={styles.leftCol}>
           <div className={styles.details}>
             <h1>Product Name</h1>
@@ -104,58 +156,6 @@ const Product = () => {
           <div className={styles.infoSection}>
             <h3>Returns</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</p>
-          </div>
-        </div>
-
-        <div className={styles.rightCol}>
-          <div className={styles.imageContainer}>
-            <Image
-              src={imgSrc}
-              alt="Product Image"
-              className={styles.image}
-            />
-          </div>
-
-          <div className={styles.imagesRow}>
-            <button className={styles.transparentButton} onClick={() => handleSelectedPhoto}>
-              <Image
-                src={imgSrc}
-                alt="Product Image"
-                className={styles.miniImage}
-              />
-            </button>
-
-            <button className={styles.transparentButton} onClick={() => handleSelectedPhoto}>
-              <Image
-                src={imgSrc}
-                alt="Product Image"
-                className={styles.miniImage}
-              />
-            </button>
-
-            <button className={styles.transparentButton} onClick={() => handleSelectedPhoto}>
-              <Image
-                src={imgSrc}
-                alt="Product Image"
-                className={styles.miniImage}
-              />
-            </button>
-
-            <button className={styles.transparentButton} onClick={() => handleSelectedPhoto}>
-              <Image
-                src={imgSrc}
-                alt="Product Image"
-                className={styles.miniImage}
-              />
-            </button>
-
-            <button className={styles.transparentButton} onClick={() => handleSelectedPhoto}>
-              <Image
-                src={imgSrc}
-                alt="Product Image"
-                className={styles.miniImage}
-              />
-            </button>
           </div>
         </div>
       </div>
