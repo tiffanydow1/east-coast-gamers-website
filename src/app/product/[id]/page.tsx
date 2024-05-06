@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react';
+import { ChangeEvent, FormEvent, useState } from 'react';
 import styles from './page.module.css';
 import Image from 'next/image';
 import Line from '@/components/Line/Line';
@@ -15,24 +15,26 @@ const sizeOptions = ['XS', 'S', 'M', 'L', 'XL', 'XXL'];
 const Product = () => {
   const [selectedColor, setSelectedColor] = useState('Red');
   const [selectedSize, setSelectedSide] = useState('');
-  const [quantity, setQuantity] = useState(1);
+  const [quantity, setQuantity] = useState<number>(1);
 
   const handleSizeChange = () => {
     console.log('inside handle size change')
   }
 
-  const handleQuantityChange = (event) => {
-    setQuantity(event.target.value);
+  const handleQuantityChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const newQuantity: number = parseInt(event.target.value);
+    setQuantity(newQuantity);
   }
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     console.log('inside handle submit');
   }
 
-  const handleSelectedPhoto = (event) => {
-    console.log('selecting new photo');
+  const handleSelectedPhoto = (event: ChangeEvent<HTMLInputElement>) => {
+    const selectedPhoto: string = event.target.value;
+    console.log('selecting new photo:', selectedPhoto);
   }
 
   return (
