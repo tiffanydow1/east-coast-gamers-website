@@ -1,0 +1,30 @@
+.relatedSection {
+  margin-top: 75px;
+}
+
+.titleSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px 0;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+.mobileSlider {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .row {
+    display: none;
+  }
+
+  .mobileSlider {
+    display: block;
+  }
+}

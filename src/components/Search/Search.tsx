@@ -7,7 +7,7 @@ interface SearchProps {
 
 const Search: React.FC<SearchProps> = ({ onClick }) => {
   return (
-    <button className={styles.button} onClick={onClick}>
+    <button type="button" className={styles.button} onClick={onClick}>
       <FaSearch className={styles.searchIcon} />
     </button>
   );

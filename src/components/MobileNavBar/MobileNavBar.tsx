@@ -128,6 +128,7 @@ const MobileNavBar: React.FC<MobileNavBarProps> = ({ active, onLinkClick }) => {
     <div className={`${styles.container} ${active ? styles.active : ''}`}>
       <div className={styles.topContainer}>
         <button
+          type="button"
           className={`${styles.button} ${currentMenu === 'secondary' ? styles.secondaryActive : ''}`}
           onClick={() => {
             setCurrentMenu('primary')
@@ -143,7 +144,7 @@ const MobileNavBar: React.FC<MobileNavBarProps> = ({ active, onLinkClick }) => {
           </Link>
         </div>
 
-        <button className={styles.closeButton} onClick={(event) => onLinkClick(event)}>
+        <button type="button" className={styles.closeButton} onClick={(event) => onLinkClick(event)}>
           <FaTimes className={styles.timesIcon} />
         </button>
       </div>

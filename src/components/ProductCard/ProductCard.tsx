@@ -44,7 +44,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
           <p>{variant}</p>
         </Link>
 
-        <Button variant="solid" text="Add To Cart" />
+        <Button type="button" variant="solid" text="Add To Cart" />
       </div>
     </div>
   )

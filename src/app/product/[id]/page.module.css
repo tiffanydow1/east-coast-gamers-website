@@ -1,0 +1,167 @@
+.container {
+  min-height: 50vh;
+  padding: 6rem;
+  background-color: var(--darkBlue);
+}
+
+.flexContainer {
+  display: flex;
+}
+
+.leftCol {
+  width: 50%;
+}
+
+.rightCol {
+  width: 50%;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 15px 0;
+  margin-bottom: 10px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px 0;
+}
+
+.colorSelector {
+  display: flex;
+  justify-content: space-between;
+  width: 30%;
+}
+
+.radioButton {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.radioButton input[type="radio"] {
+  display: none;
+}
+
+.radioButton label {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid black;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.radioButton label.checked {
+  border-color: white;
+}
+
+.radioButton input[type="radio"]:checked + label {
+  background-color: inherit;
+}
+
+.radioButton label::after {
+  content: "";
+  display: block;
+  width: 14px;
+  height: 14px;
+  margin: 2px;
+  border-radius: 50%;
+  background-color: inherit;
+}
+
+.form button {
+  width: 50%;
+}
+
+.form select, .form input {
+  width: 105px;
+  background-color: var(--white);
+  color: var(--black);
+  padding: 10px;
+  font-weight: 900;
+  font-size: 16px;
+  text-align: center;
+}
+
+.smallPrint {
+  font-size: 12px;
+}
+
+.imageContainer {
+  width: 600px;
+  height: 600px;
+  margin: 0 auto;
+}
+
+.imageContainer img {
+  width: 100%;
+  height: auto;
+}
+
+.imagesRow {
+  display: flex;
+  justify-content: space-between;
+  width: 600px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.miniImage {
+  width: 100px;
+  height: auto;
+}
+
+.transparentButton {
+  cursor: pointer;
+}
+
+.infoSection {
+  display: flex;
+  flex-direction: column;
+  gap: 10px 0;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 2rem;
+  }
+
+  .flexContainer {
+    flex-direction: column-reverse;
+  }
+
+  .leftCol {
+    width: 100%;
+  }
+
+  .rightCol {
+    margin-bottom: 30px;
+  }
+
+  .imageContainer {
+    width: 350px;
+    height: auto;
+  }
+
+  .imagesRow {
+    width: 100%;
+  }
+
+  .miniImage {
+    width: 66px;
+  }
+
+  .colorSelector {
+    width: 100%;
+  }
+
+  .form select, .form input {
+    width: 100%;
+  }
+
+  .form button {
+    width: 100%;
+  }
+}

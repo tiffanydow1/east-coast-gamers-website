@@ -16,6 +16,7 @@ const HeroImage = () => {
           Discover a collection of vibrant, game-themed apparel and accessories that will make you stand out from the crowd. From RPGs to classic arcade games, we have something for every gaming enthusiast.
         </p>
         <Button
+          type="button"
           variant="solid"
           text="Shop"
           onClick={() => router.push('/apparel')}

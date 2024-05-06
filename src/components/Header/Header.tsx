@@ -49,7 +49,7 @@ const Header = () => {
           />
         </div>
 
-        <DesktopNavbar />
+
 
         <MobileNavBar
           active={sidebar}
@@ -58,12 +58,14 @@ const Header = () => {
 
         <div className={styles.logoContainer}>
           <Logo width="150px" height="auto" />
+
+          <DesktopNavbar />
         </div>
 
         <div className={styles.right}>
-          <Search
+          {/* <Search
             onClick={() => openSearch()}
-          />
+          /> */}
           <Cart
             // quantity={cartContext.products.quantity}
             // onClick={cartContext.toggle}

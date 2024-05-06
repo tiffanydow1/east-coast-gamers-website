@@ -25,7 +25,7 @@ const Faqs: React.FC = () => {
       <div className={styles.questions}>
         {questions.map(question => (
           <div key={question.section} className={`${styles.expandableContainer} ${activeSection === question.section ? styles.activeContainer : ''}`}>
-            <button className={styles.expandableButton} onClick={() => setExpanded(question.section)}>
+            <button type="button" className={styles.expandableButton} onClick={() => setExpanded(question.section)}>
               <div className={styles.sectionTitle}>
                 <p>{question.title}</p>
               </div>

@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import styles from './desktopNavbar.module.css';
+import Search from '@/components/Search/Search';
 
 const NAVIGATION = [
   {
@@ -55,7 +56,7 @@ const NAVIGATION = [
   },
   {
     label: 'Custom',
-    URL: '/custom',
+    URL: '',
     category: 'custom',
     categories: [
       'adventurers-garb',
@@ -64,12 +65,12 @@ const NAVIGATION = [
     menu: [
       {
         label: 'Adventurers Garb',
-        URL: '/custom/adventurers-garb',
+        URL: '/adventurers-garb',
         category: 'adventurers-garb',
       },
       {
         label: '3D Prints',
-        URL: '/custom/3d-prints',
+        URL: '/3d-prints',
         category: '3d-prints',
       }
     ],
@@ -112,8 +113,15 @@ const DesktopNavbar: React.FC = () => {
   const [currentMenu, setCurrentMenu] = useState<string>('primary');
   const [accordianActive, setAccordianActive] = useState<{ [key: string]: boolean }>({});
   const [activePrimary, setActivePrimary] = useState<string | null>(null);
+  const [showSearch, setShowSearch] = useState<boolean>(false);
 
   const refs: { [key: string]: React.RefObject<HTMLDivElement> } = {};
+
+  const openSearch = () => {
+    setShowSearch(true);
+
+    console.log('button clicked')
+  };
 
   return (
     <div className={styles.nav}>
@@ -154,6 +162,10 @@ const DesktopNavbar: React.FC = () => {
             )}
           </div>
         ))}
+
+        <Search
+          onClick={() => openSearch()}
+        />
       </div>
     </div>
   )

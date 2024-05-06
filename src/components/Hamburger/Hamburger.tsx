@@ -12,7 +12,7 @@ const Hamburger: React.FC<HamburgerProps> = ({
   onClick
 }) => {
   return (
-    <button className={styles.button} onClick={onClick}>
+    <button type="button" className={styles.button} onClick={onClick}>
       <GiHamburgerMenu className={`${styles.hamburger} ${active ? styles.hamburgerHidden : ''}`} />
 
       <FaTimes className={`${styles.times} ${active ? styles.timesActive : ''}`} />

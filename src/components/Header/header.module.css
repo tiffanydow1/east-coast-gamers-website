@@ -12,11 +12,11 @@
 .header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   width: 100%;
-  height: 150px;
+  height: 230px;
   padding: 0 32px;
-  background-color: var(--black);
+  background-color: var(--charcoal);
 }
 
 .mobileMenu {
@@ -33,6 +33,9 @@
   top: -14px;
   left: 50%;
   transform: translate(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .right {
@@ -45,6 +48,7 @@
 @media (max-width: 768px) {
   .header {
    justify-content: space-between;
+   height: 150px;
    padding: 0 8px;
   }
 

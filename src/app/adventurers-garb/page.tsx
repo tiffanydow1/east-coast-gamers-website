@@ -1,11 +1,9 @@
-'use client'
+import styles from './page.module.css';
 
-import { useRouter } from 'next/navigation';
 import Button from '@/components/Button/Button';
 import ProductCard from '@/components/ProductCard/ProductCard';
-import styles from './featuredProduct.module.css';
 
-import imgSrc from '../../../public/tshirt.jpg';
+import imgSrc from '../../../images/tshirt.jpg';
 
 interface Product {
   id: number;
@@ -83,39 +81,40 @@ const sampleProducts: Product[] = [
   },
 ];
 
-const FeaturedProducts: React.FC = () => {
-  const router = useRouter();
+const AdventurersGarb = () => (
+  <div className={styles.body}>
+    <h1>Adventurers Garb</h1>
+    <div className={styles.row}>
+      <p>Discover our collection of adventurers garb.</p>
+      <Button
+        type="button"
+        variant="outlined"
+        text="See All"
+        // onClick={() => {}}
+      />
+    </div>
 
-  return (
-    <div className={styles.container}>
-      <div className={styles.flex}>
-        <div>
-          <h1>Featured Products</h1>
-          <p>Browse our selection of high-quality apparel and accessories.</p>
-        </div>
-        <Button
-          type="button"
-          variant="outlined"
-          text="See All"
-          onClick={() => router.push('/apparel')}
-        />
-      </div>
-
-      <div className={styles.gridContainer}>
+    <div className={styles.gridContainer}>
         {Array.isArray(sampleProducts) && sampleProducts.length > 0 && sampleProducts.map(product => (
           <ProductCard
             key={product.id}
             id={product.id}
             name={product.name}
             price={product.price}
-            url={`product/${product.id}`}
+            url={`/product/${product.id}`}
             image={product.image}
             variant={product.variant}
           />
         ))}
       </div>
-    </div>
-  )
-}
+      <div className={styles.btnContainer}>
+        <Button
+          type="button"
+          variant="outlined"
+          text="See All"
+        />
+      </div>
+  </div>
+);
 
-export default FeaturedProducts;
+export default AdventurersGarb;

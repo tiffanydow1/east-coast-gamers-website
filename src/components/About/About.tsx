@@ -19,7 +19,7 @@ const About  = () => {
           <li>Vibrant Colors to Express Your Gaming Style</li>
         </ul>
 
-        <Button variant="outlined" text="Learn More" />
+        <Button type="button" variant="outlined" text="Learn More" />
       </div>
       <div className={styles.rightCol}>
         <Image
