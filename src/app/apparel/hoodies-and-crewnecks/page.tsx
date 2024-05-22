@@ -83,7 +83,7 @@ const sampleProducts: Product[] = [
 
 const HoodiesAndCrewnecks = () => (
   <div className={styles.body}>
-    <h1>Hoodies and Crewnecks</h1>
+    <h1>Hoodies + Crewnecks</h1>
     <div className={styles.row}>
       <p>Discover our collection of high-quality hoodies and crewnecks.</p>
       <Button

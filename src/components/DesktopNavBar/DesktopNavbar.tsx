@@ -7,6 +7,11 @@ import Search from '@/components/Search/Search';
 
 const NAVIGATION = [
   {
+    label: 'Featured',
+    URL: '/featured',
+    category: 'featured',
+  },
+  {
     label: 'Apparel',
     URL: '/apparel',
     category: 'apparel',
@@ -17,7 +22,7 @@ const NAVIGATION = [
     ],
     menu: [
       {
-        label: 'Hoodies and Crewnecks',
+        label: 'Hoodies + Crewnecks',
         URL: '/apparel/hoodies-and-crewnecks',
         category: 'hoodies-and-crewnecks',
       },
@@ -30,6 +35,33 @@ const NAVIGATION = [
         label: 'Headwear',
         URL: '/apparel/headwear',
         category: 'headwear',
+      },
+    ],
+  },
+  {
+    label: 'Collections',
+    URL: '/collections',
+    category: 'collection',
+    categories: [
+      'classic-vintage',
+      'esport-emblem',
+      'mod-mockup',
+    ],
+    menu: [
+      {
+        label: 'Classic Vintage',
+        URL: '/collections/classic-vintage',
+        category: 'classic-vintage',
+      },
+      {
+        label: 'Esport Emblem',
+        URL: '/collections/esport-emblem',
+        category: 'esport-emblem'
+      },
+      {
+        label: 'Mod Mockup',
+        URL: '/collections/mod-mockup',
+        category: 'mod-mockup',
       },
     ],
   },
@@ -73,27 +105,6 @@ const NAVIGATION = [
         URL: '/3d-prints',
         category: '3d-prints',
       }
-    ],
-  },
-  {
-    label: 'Collections',
-    URL: '/collections',
-    category: 'collection',
-    categories: [
-      'classic-vintage',
-      'esport-emblem',
-    ],
-    menu: [
-      {
-        label: 'Classic Vintage',
-        URL: '/collections/classic-vintage',
-        category: 'classic-vintage',
-      },
-      {
-        label: 'Esport Emblem',
-        URL: '/collections/esport-emblem',
-        category: 'esport-emblem'
-      },
     ],
   },
 ];

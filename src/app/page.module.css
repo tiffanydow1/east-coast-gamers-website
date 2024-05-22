@@ -3,9 +3,9 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 6rem;
+  padding: 96px 0;
   min-height: 50vh;
-  background-color: var(--darkBlue);
+  background-color: var(--secondaryColor);
 }
 
 .description {

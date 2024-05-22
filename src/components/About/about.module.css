@@ -1,8 +1,14 @@
+.outerContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 96px;
+}
+
 .container {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  width: 90%;
+  width: 90%;;
 }
 
 .leftCol {
@@ -21,12 +27,6 @@
   margin-bottom: 16px;
 }
 
-.rightCol {
-  display: flex;
-  justify-content: center;
-  width: 50%;
-}
-
 .rightCol .image {
   width: 500px;
   height: auto;
@@ -37,6 +37,7 @@
   .container {
     flex-direction: column;
     width: 100%;
+    margin-top: 65px;
   }
 
   .container h1 {

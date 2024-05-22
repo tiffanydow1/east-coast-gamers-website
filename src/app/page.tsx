@@ -13,9 +13,9 @@ export default function Home() {
     <>
       <HeroImage />
       <main className={styles.main}>
-        <About />
         <FeaturedProducts />
         <Collections />
+        <About />
         <Categories />
         <Faqs />
       </main>

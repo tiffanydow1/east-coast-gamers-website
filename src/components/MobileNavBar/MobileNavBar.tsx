@@ -12,7 +12,7 @@ interface MenuItem {
   label: string;
   URL: string;
   category: string;
-  categories: Array<string>;
+  categories?: Array<string>;
   menu?: SecondaryMenuItem[];
 }
 
@@ -29,6 +29,11 @@ interface MobileNavBarProps {
 
 const NAVIGATION: MenuItem[] = [
   {
+    label: 'Featured',
+    URL: '/featured',
+    category: 'featured',
+  },
+  {
     label: 'Apparel',
     URL: '/apparel',
     category: 'apparel',
@@ -39,7 +44,7 @@ const NAVIGATION: MenuItem[] = [
     ],
     menu: [
       {
-        label: 'Hoodies and Crewnecks',
+        label: 'Hoodies + Crewnecks',
         URL: '/apparel/hoodies-and-crewnecks',
         category: 'hoodies-and-crewnecks',
       },

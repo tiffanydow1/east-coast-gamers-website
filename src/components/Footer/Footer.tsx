@@ -7,13 +7,12 @@ import { MdOutlineEmail } from "react-icons/md";
 import Logo from '@/components/Logo/Logo';
 import styles from './footer.module.css';
 
-import imgSrc from '../../../images/ecg-logo.webp';
+import imgSrc from '../../../images/main-logo.png';
 
 const Footer = () => {
   return (
     <div className={styles.container}>
       <div className={styles.topSection}>
-        {/* <Logo width="150px" height="auto" /> */}
         <Image src={imgSrc} alt="East Coast Gamers Logo" />
 
         <div className={styles.links}>

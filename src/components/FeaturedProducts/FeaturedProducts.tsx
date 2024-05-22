@@ -87,32 +87,34 @@ const FeaturedProducts: React.FC = () => {
   const router = useRouter();
 
   return (
-    <div className={styles.container}>
-      <div className={styles.flex}>
-        <div>
-          <h1>Featured Products</h1>
-          <p>Browse our selection of high-quality apparel and accessories.</p>
-        </div>
-        <Button
-          type="button"
-          variant="outlined"
-          text="See All"
-          onClick={() => router.push('/apparel')}
-        />
-      </div>
-
-      <div className={styles.gridContainer}>
-        {Array.isArray(sampleProducts) && sampleProducts.length > 0 && sampleProducts.map(product => (
-          <ProductCard
-            key={product.id}
-            id={product.id}
-            name={product.name}
-            price={product.price}
-            url={`product/${product.id}`}
-            image={product.image}
-            variant={product.variant}
+    <div className={styles.outerContainer}>
+      <div className={styles.container}>
+        <div className={styles.flex}>
+          <div>
+            <h1>Featured Products</h1>
+            <p>Browse our selection of high-quality apparel and accessories.</p>
+          </div>
+          <Button
+            type="button"
+            variant="outlined"
+            text="See All"
+            onClick={() => router.push('/apparel')}
           />
-        ))}
+        </div>
+
+        <div className={styles.gridContainer}>
+          {Array.isArray(sampleProducts) && sampleProducts.length > 0 && sampleProducts.map(product => (
+            <ProductCard
+              key={product.id}
+              id={product.id}
+              name={product.name}
+              price={product.price}
+              url={`product/${product.id}`}
+              image={product.image}
+              variant={product.variant}
+            />
+          ))}
+        </div>
       </div>
     </div>
   )

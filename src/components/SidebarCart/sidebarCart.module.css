@@ -1,0 +1,61 @@
+.sidebar {
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  transform: translateX('0%');
+  transition: transform 0.3s ease-out 0s;
+  will-change: transform;
+  display: none;
+}
+
+.visible {
+  display: block;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  height: 100%;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 6px, rgba(0, 0, 0, 0.1) 0px 0px 1px;
+  background-color: var(--white);
+}
+
+.topbar {
+  height: 52px;
+  background-color: var(--white);
+  border-bottom: 1px solid #d9d9d9;
+}
+
+.topbar h3,
+.topbar p {
+  color: var(--black);
+}
+
+.topbarSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.closeButton button {
+  background-color: transparent;
+  border: none;
+}
+
+.icon {
+  color: var(--black);
+  width: 25px;
+  height: 25px;
+}
+
+.body {
+  overflow: scroll;
+  height: calc(100% - 256px);
+  padding-bottom: 30px;
+}
+
+
+/* tablet styles - wrapper - width: 25rem */
