@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { FaChevronLeft, FaChevronRight, FaTimes } from "react-icons/fa";
 
 import styles from './mobileNavBar.module.css';
-import imgSrc from '../../../images/ecg-logo.webp';
+import imgSrc from '../../../images/main-logo.png';
 
 interface MenuItem {
   label: string;

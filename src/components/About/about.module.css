@@ -34,10 +34,13 @@
 }
 
 @media (max-width: 768px) {
+  .outerContainer {
+    padding: 2rem;
+  }
+
   .container {
     flex-direction: column;
     width: 100%;
-    margin-top: 65px;
   }
 
   .container h1 {

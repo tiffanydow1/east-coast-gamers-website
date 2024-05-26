@@ -46,14 +46,13 @@
 }
 
 .logoContainer {
-  flex-grow: 1;
   display: flex;
   justify-content: center;
 }
 
 .logoContainer .image {
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: auto;
 }
 
 .closeButton {

@@ -136,7 +136,8 @@
 @media (max-width: 768px) {
   .container {
     width: 100%;
-    margin-top: 65px;
+    margin-top: 0px;
+    padding: 2rem;
   }
 
   .container h1 {

@@ -1,11 +1,9 @@
 .nav {
   z-index: 30;
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%);
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0 auto;
   height: inherit;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
@@ -78,7 +76,7 @@
 
 .secondaryMenu{
   position: absolute;
-  top: 230px;
+  top: 100px;
   display: none;
   flex-direction: column;
   align-items: flex-start;

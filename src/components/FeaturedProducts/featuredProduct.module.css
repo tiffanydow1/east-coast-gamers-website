@@ -30,9 +30,12 @@
 }
 
 @media (max-width: 768px) {
+  .outerContainer {
+    padding: 2rem;
+  }
+
   .container {
     width: 100%;
-    margin-top: 65px;
   }
 
   .flex h1 {

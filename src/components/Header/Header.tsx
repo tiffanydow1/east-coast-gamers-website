@@ -51,8 +51,6 @@ const Header = () => {
           />
         </div>
 
-
-
         <MobileNavBar
           active={sidebar}
           onLinkClick={toggleSidebar}
