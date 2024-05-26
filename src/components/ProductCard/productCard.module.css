@@ -44,11 +44,8 @@
   color: var(--white);
 }
 
-.details a {
-  margin-bottom: 16px;
-}
-
 .details p {
+  margin-bottom: 16px;
   color: var(--white);
 }
 

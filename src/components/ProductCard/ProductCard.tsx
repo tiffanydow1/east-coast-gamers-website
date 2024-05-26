@@ -4,8 +4,6 @@ import styles from './productCard.module.css';
 
 import Button from '@/components/Button/Button';
 
-import imgSrc from '../../../public/tshirt.jpg';
-
 interface ProductCardProps {
   id: number;
   name: string;
@@ -33,19 +31,22 @@ const ProductCard: React.FC<ProductCardProps> = ({
             className={styles.image}
           />
         </div>
-      </Link>
 
-      <div className={styles.details}>
-        <Link href={url}>
+        <div className={styles.details}>
           <div className={styles.headingContainer}>
             <h3>{name}</h3>
             <h3>{price}</h3>
           </div>
-          <p>{variant}</p>
-        </Link>
 
-        <Button type="button" variant="solid" text="Add To Cart" />
-      </div>
+          <p>{variant}</p>
+
+          <Button
+            type="button"
+            variant="solid"
+            text="View Product"
+          />
+        </div>
+      </Link>
     </div>
   )
 }
