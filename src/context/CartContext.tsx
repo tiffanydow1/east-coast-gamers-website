@@ -4,8 +4,8 @@ import { createContext, useContext, useState, ReactNode } from 'react';
 
 interface Product {
   id: number;
-  title: string;
-  category: string;
+  name: string;
+  // category: string;
   size: string;
   quantity: number;
   price: number;
@@ -13,7 +13,6 @@ interface Product {
 
 interface CartItem extends Product {
   variant: string;
-  quantity: number;
 }
 
 interface CartContextProps {
