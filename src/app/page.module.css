@@ -130,8 +130,9 @@
 /* Mobile */
 @media (max-width: 768px) {
   .main {
-    padding: 2rem;
+    padding: 0px;
   }
+
   .content {
     padding: 4rem;
   }

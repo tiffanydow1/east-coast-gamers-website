@@ -1,5 +1,6 @@
 'use client'
-import { ChangeEvent, FormEvent, useState } from 'react';
+import { ChangeEvent, FormEvent, useEffect, useState } from 'react';
+import { useParams } from 'next/navigation';
 import styles from './page.module.css';
 import Image from 'next/image';
 import Line from '@/components/Line/Line';
@@ -13,9 +14,22 @@ const colorOptions = ['Red', 'Blue', 'Green'];
 const sizeOptions = ['XS', 'S', 'M', 'L', 'XL', 'XXL'];
 
 const Product = () => {
+  const params = useParams();
+  const { id } = params;
+
+  // const [product, setProduct] = useState(null);
   const [selectedColor, setSelectedColor] = useState('Red');
   const [selectedSize, setSelectedSide] = useState('');
   const [quantity, setQuantity] = useState<number>(1);
+
+  // useEffect(() => {
+  //   if (id) {
+  //     fetch(`/api/products/${id}`)
+  //       .then(response => response.json())
+  //       .then(data => setProduct(data))
+  //       .catch(error => console.error('Error fetching product data:', error));
+  //   }
+  // }, [id]);
 
   const handleSizeChange = () => {
     console.log('inside handle size change')
@@ -30,12 +44,27 @@ const Product = () => {
     event.preventDefault();
 
     console.log('inside handle submit');
+
+    // CALL ADD TO CART FROM CART CONTEXT
+    // id, name, size, quantity, price, variant
+    const selectedProduct = {
+      id,
+      // name: product.name,
+      size: selectedSize,
+      quantity,
+      //price: product.price,
+      variant: selectedColor,
+    };
   }
 
   const handleSelectedPhoto = (event: ChangeEvent<HTMLInputElement>) => {
     const selectedPhoto: string = event.target.value;
     console.log('selecting new photo:', selectedPhoto);
   }
+
+  // if (!product) {
+  //   return <div>Loading...</div>;
+  // }
 
   return (
     <div className={styles.container}>
