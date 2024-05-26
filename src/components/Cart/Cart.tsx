@@ -1,6 +1,11 @@
+import { MouseEventHandler } from 'react';
 import styles from './cart.module.css';
 
-const Cart = ({ onClick }) => {
+interface CartProps {
+  onClick: MouseEventHandler<HTMLButtonElement>;
+}
+
+const Cart: React.FC<CartProps> = ({ onClick }) => {
   return (
     <button
       type="button"
