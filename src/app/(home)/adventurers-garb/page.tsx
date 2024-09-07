@@ -95,17 +95,17 @@ const AdventurersGarb = () => (
     </div>
 
     <div className={styles.gridContainer}>
-        {Array.isArray(sampleProducts) && sampleProducts.length > 0 && sampleProducts.map(product => (
-          // <ProductCard
-          //   key={product.id}
-          //   id={product.id}
-          //   name={product.name}
-          //   price={product.price}
-          //   url={`/product/${product.id}`}
-          //   image={product.image}
-          //   variant={product.variant}
-          // />
-        ))}
+        {/* {Array.isArray(sampleProducts) && sampleProducts.length > 0 && sampleProducts.map(product => (
+          <ProductCard
+            key={product.id}
+            id={product.id}
+            name={product.name}
+            price={product.price}
+            url={`/product/${product.id}`}
+            image={product.image}
+            variant={product.variant}
+          />
+        ))} */}
       </div>
       <div className={styles.btnContainer}>
         <Button
