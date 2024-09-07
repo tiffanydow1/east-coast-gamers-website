@@ -3,14 +3,14 @@ import styles from './page.module.css';
 import Button from '@/components/Button/Button';
 import ProductCard from '@/components/ProductCard/ProductCard';
 
-import imgSrc from '';
+// import imgSrc from '';
 
 interface Product {
   id: number;
   name: string;
   price: string;
   url: string;
-  image: typeof imgSrc;
+  image: string;
   variant: string;
 }
 
@@ -20,7 +20,7 @@ const sampleProducts: Product[] = [
     name: 'Sample Product 1',
     price: '$100',
     url: '/apparel',
-    image: imgSrc,
+    image: '',
     variant: 'blue'
   },
   {
