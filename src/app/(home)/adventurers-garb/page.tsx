@@ -3,7 +3,7 @@ import styles from './page.module.css';
 import Button from '@/components/Button/Button';
 import ProductCard from '@/components/ProductCard/ProductCard';
 
-import imgSrc from '../../../images/tshirt.jpg';
+import imgSrc from '';
 
 interface Product {
   id: number;
@@ -96,15 +96,15 @@ const AdventurersGarb = () => (
 
     <div className={styles.gridContainer}>
         {Array.isArray(sampleProducts) && sampleProducts.length > 0 && sampleProducts.map(product => (
-          <ProductCard
-            key={product.id}
-            id={product.id}
-            name={product.name}
-            price={product.price}
-            url={`/product/${product.id}`}
-            image={product.image}
-            variant={product.variant}
-          />
+          // <ProductCard
+          //   key={product.id}
+          //   id={product.id}
+          //   name={product.name}
+          //   price={product.price}
+          //   url={`/product/${product.id}`}
+          //   image={product.image}
+          //   variant={product.variant}
+          // />
         ))}
       </div>
       <div className={styles.btnContainer}>
