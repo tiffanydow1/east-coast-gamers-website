@@ -17,6 +17,14 @@
   width: 100%;
 }
 
+.flex h1 {
+  font-size: 32px;
+}
+
+.flex p {
+  font-size: 17px;
+}
+
 .gridContainer {
   display: grid;
   grid-template-columns: repeat(4, 1fr); /* 4 columns */

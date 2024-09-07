@@ -1,10 +1,11 @@
+import { MouseEventHandler } from 'react';
 import styles from './button.module.css';
 
 interface ButtonProps {
   type: 'button' | 'submit';
   variant: 'outlined' | 'solid';
   text: string;
-  onClick?: () => void;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
 }
 
 const Button: React.FC<ButtonProps> = ({

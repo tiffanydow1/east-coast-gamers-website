@@ -1,90 +1,57 @@
 'use client'
 
 import { useRouter } from 'next/navigation';
+import { useState, useEffect } from 'react';
 import Button from '@/components/Button/Button';
 import ProductCard from '@/components/ProductCard/ProductCard';
 import styles from './featuredProduct.module.css';
-
-import imgSrc from '../../../public/tshirt.jpg';
+import { getCollectionBySlug } from '@/lib/actions/actions';
 
 interface Product {
-  id: number;
-  name: string;
-  price: string;
+  id: string;
+  title: string;
+  description: string;
+  price: number;
   url: string;
-  image: typeof imgSrc;
-  variant: string;
+  media: string[];
+  colors: string[];
+  sizes: string[];
 }
 
-const sampleProducts: Product[] = [
-  {
-    id: 1,
-    name: 'Sample Product 1',
-    price: '$100',
-    url: '/apparel',
-    image: imgSrc,
-    variant: 'blue'
-  },
-  {
-    id: 2,
-    name: 'Sample Product 2',
-    price: '$150',
-    url: '/apparel',
-    image: imgSrc,
-    variant: 'green'
-  },
-  {
-    id: 3,
-    name: 'Sample Product 3',
-    price: '$200',
-    url: '/apparel',
-    image: imgSrc,
-    variant: 'red'
-  },
-  {
-    id: 4,
-    name: 'Sample Product 4',
-    price: '$50',
-    url: '/apparel',
-    image: imgSrc,
-    variant: 'blue'
-  },
-  {
-    id: 5,
-    name: 'Sample Product 5',
-    price: '$200',
-    url: '/extras',
-    image: imgSrc,
-    variant: 'blue'
-  },
-  {
-    id: 6,
-    name: 'Sample Product 6',
-    price: '$45',
-    url: '/collections/classic-vintage',
-    image: imgSrc,
-    variant: 'plaid'
-  },
-  {
-    id: 7,
-    name: 'Sample Product 7',
-    price: '$55',
-    url: '/custom',
-    image: imgSrc,
-    variant: 'orange'
-  },
-  {
-    id: 8,
-    name: 'Sample Product 8',
-    price: '$100',
-    url: '/extras/bags',
-    image: imgSrc,
-    variant: 'black'
-  },
-];
+type CollectionType = {
+  createdAt: string;
+  description: string;
+  image: string;
+  slug: string;
+  title: string;
+  updatedAt: string;
+  products: Product[];
+}
 
 const FeaturedProducts: React.FC = () => {
   const router = useRouter();
+  const [loading, setLoading] = useState<boolean>(false);
+  const [collection, setCollection] = useState<CollectionType | null>(null);
+
+  useEffect(() => {
+    fetchCollection('featured', 8);
+  }, []);
+
+  const fetchCollection = async (slug: string, limit?: number): Promise<void> => {
+    setLoading(true);
+    try {
+      const data = await getCollectionBySlug(slug, limit);
+      setCollection(data);
+    } catch (error) {
+      console.error('Error fetching collection:', error);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  if (loading) {
+    return <p>Loading...</p>
+  }
 
   return (
     <div className={styles.outerContainer}>
@@ -98,23 +65,27 @@ const FeaturedProducts: React.FC = () => {
             type="button"
             variant="outlined"
             text="See All"
-            onClick={() => router.push('/apparel')}
+            onClick={() => router.push('/featured')}
           />
         </div>
 
-        <div className={styles.gridContainer}>
-          {Array.isArray(sampleProducts) && sampleProducts.length > 0 && sampleProducts.map(product => (
-            <ProductCard
-              key={product.id}
-              id={product.id}
-              name={product.name}
-              price={product.price}
-              url={`product/${product.id}`}
-              image={product.image}
-              variant={product.variant}
-            />
-          ))}
-        </div>
+        {!loading && collection?.products?.length === 0 && (
+          <p>No Featured Products available at this time.</p>
+        )}
+
+        {!loading && collection?.products?.length > 0 && (
+          <div className={styles.gridContainer}>
+            {Array.isArray(collection?.products) && collection?.products.length > 0 && collection?.products.map(product => (
+              <ProductCard
+                key={product.id}
+                title={product.title}
+                price={product.price}
+                url={`product/${product.id}`}
+                images={product.media}
+              />
+            ))}
+          </div>
+        )}
       </div>
     </div>
   )

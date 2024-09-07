@@ -1,5 +1,5 @@
 import { MouseEventHandler } from 'react';
-import styles from './cart.module.css';
+import Button from '../../components/Button/Button';
 
 interface CartProps {
   onClick: MouseEventHandler<HTMLButtonElement>;
@@ -7,13 +7,14 @@ interface CartProps {
 
 const Cart: React.FC<CartProps> = ({ onClick }) => {
   return (
-    <button
-      type="button"
-      onClick={onClick}
-      className={styles.button}
-    >
-      Cart
-    </button>
+    <div>
+      <Button
+        type="button"
+        variant="solid"
+        text="Cart"
+        onClick={onClick}
+      />
+    </div>
   );
 }
 

@@ -40,7 +40,7 @@ const NAVIGATION = [
   },
   {
     label: 'Collections',
-    URL: '/collections',
+    URL: '',
     category: 'collection',
     categories: [
       'classic-vintage',
@@ -62,6 +62,11 @@ const NAVIGATION = [
         label: 'Mod Mockup',
         URL: '/collections/mod-mockup',
         category: 'mod-mockup',
+      },
+      {
+        label: 'Tango',
+        URL: '/collections/tango',
+        category: 'tango',
       },
     ],
   },
@@ -174,10 +179,11 @@ const DesktopNavbar: React.FC = () => {
           </div>
         ))}
 
-        <Search
-          onClick={() => openSearch()}
-        />
+
       </div>
+      {/* <Search
+          onClick={() => openSearch()}
+        /> */}
     </div>
   )
 };

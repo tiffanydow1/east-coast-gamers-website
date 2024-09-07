@@ -1,9 +1,8 @@
 'use client'
-import { useState, useEffect, useContext } from 'react';
-import { useCart } from '../../context/CartContext';
+import { useState } from 'react';
+// import { useCart } from '../../context/CartContext';
+import useCart from '../../lib/hooks/useCart';
 import styles from './header.module.css';
-
-import CartContext from '@/app/contexts/Cart';
 
 import Logo from '@/components/Logo/Logo';
 import Hamburger from '@/components/Hamburger/Hamburger';
@@ -14,7 +13,7 @@ import Cart from '@/components/Cart/Cart';
 import SearchBar from '@/components/SearchBar/SearchBar';
 
 const Header = () => {
-  const { toggleSidecart } = useCart();
+  const cart = useCart();
   const [showSearch, setShowSearch] = useState<boolean>(false);
   const [sidebar, setSidebar] = useState<boolean>(false);
 
@@ -62,13 +61,10 @@ const Header = () => {
         <DesktopNavbar />
 
         <div className={styles.right}>
-          {/* <Search
+          <Search
             onClick={() => openSearch()}
-          /> */}
-          <Cart
-            // quantity={cartContext.products.quantity}
-            onClick={toggleSidecart}
           />
+          <Cart onClick={cart.toggleSideCart} />
         </div>
       </nav>
     </div>

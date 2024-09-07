@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.25rem;
+  height: 100vh;
+}
+
+.header {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #FF0000;
+}
+
+.link {
+  padding: 1rem;
+  border: 2px solid var(--shadeBlue2);
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.link:hover {
+  background-color: var(--shadeBlue2);
+  color: #ffffff;
+}

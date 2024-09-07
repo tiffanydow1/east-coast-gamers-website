@@ -1,0 +1,156 @@
+.container {
+  display: flex;
+  gap: 5rem;
+  min-height: 50vh;
+  padding: 4rem 2.5rem;
+  background-color: var(--secondaryColor);
+}
+
+.leftSection {
+  width: 66.6667%;
+}
+
+.leftSection h1 {
+  margin-bottom: 24px;
+}
+
+.leftSection hr {
+  margin-bottom: 24px;
+}
+
+.noItems {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.cartDetails {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.75rem 1rem;
+}
+
+.insideLeft {
+  display: flex;
+  align-items: center;
+}
+
+.image {
+  width: 200px;
+  height: auto;
+  border-radius: 0.5rem;
+  object-fit: cover;
+}
+
+.detail {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-left: 24px;
+}
+
+.detail h3 {
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+.detail p {
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.insideRight {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputWrapper {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.quantityIcon {
+  cursor: pointer;
+}
+
+.quantityIcon:hover {
+  color: var(--shadeBlue2);
+}
+
+.quantityText {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 0px;
+}
+
+.trashIcon {
+  cursor: pointer;
+}
+
+.trashIcon:hover {
+  color: red;
+}
+
+.rightSection {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 33.3333%;
+  padding: 1.25rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.totalSummary {
+  display: flex;
+  justify-content: space-between;
+}
+
+.checkoutButton {
+  width: 100%;
+  border: 2px solid #ffffff;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  font-size: 1rem;
+  background-color: #ffffff;
+  padding: 0.75rem 0;
+  color: var(--secondaryColor);
+}
+
+.checkoutButton:hover {
+  background-color: var(--secondaryColor);
+  color: #ffffff;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .leftSection {
+    width: 100%;
+  }
+
+  .rightSection {
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: 0rem, 0.75rem;
+  }
+
+  .cartDetails {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+}

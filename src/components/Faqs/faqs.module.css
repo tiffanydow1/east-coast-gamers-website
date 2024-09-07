@@ -32,7 +32,7 @@
 }
 
 .expandableContainer:hover {
-  border-color: var(--yellow);
+  border-color: var(--shadeBlue2);
   cursor: pointer;
   border-bottom: 1px solid var(--charcoal);
 }
@@ -42,7 +42,7 @@
 }
 
 .activeContainer {
-  border-color: var(--yellow);
+  border-color: var(--shadeBlue2);
   cursor: pointer;
 }
 
