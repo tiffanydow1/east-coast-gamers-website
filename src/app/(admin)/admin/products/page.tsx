@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { Plus } from 'lucide-react';
 
+import { CollectionType } from '@/lib/types';
 import Loader from '../components/Loader/Loader';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
@@ -21,7 +22,7 @@ type ProductType = {
   media: string[];
   createdAt: string;
   colors: string[];
-  collections: string[];
+  collections: CollectionType[];
   category: string;
 }
 
