@@ -23,3 +23,9 @@ type ProductType = {
   collections: string[];
   category: string;
 };
+
+type CustomerType = {
+  id: string;
+  name: string;
+  email: string;
+}
