@@ -49,7 +49,7 @@ const DiceBagsAndTrays = () => {
       <h1>Dice Bags & Trays</h1>
       <div className={styles.row}>
         <p>Discover our collection of dice bags and trays.</p>
-        {typeof productCount === 'number' && productCount > 8 && products.length < 9 && (
+        {typeof productCount === 'number' && productCount > 8 && products && products.length < 9 && (
           <Button
           type="button"
           variant="outlined"

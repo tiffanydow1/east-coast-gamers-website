@@ -73,8 +73,6 @@ const Product = () => {
     setQuantity(newQuantity);
   }
 
-  console.log(product, 'productttt')
-
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
