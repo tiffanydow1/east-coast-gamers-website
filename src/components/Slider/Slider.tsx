@@ -5,15 +5,22 @@ import "slick-carousel/slick/slick-theme.css";
 import "./slider.css"
 import styles from './slider.module.css';
 
-import imgSrc from '../../../public/tshirt.jpg';
-
 type Product = {
-  id: number;
-  name: string;
-  price: string;
+  _id: string;
+  id: string;
+  title: string;
+  price: number;
   url: string;
-  image: typeof imgSrc;
+  media: string[];
   variant: string;
+  category: string;
+  collections: string[];
+  colors: string[];
+  createdAt: string;
+  description: string;
+  sizes: string[];
+  tags: string[];
+  updatedAt: string;
 }
 
 type ProductListProps = {
@@ -51,15 +58,13 @@ const ImageSlider = ({ products }: ProductListProps) => {
     <div className={styles.sliderWrapper}>
       <Slider {...settings}>
         {products.map(product => (
-          <div key={product.id} className={styles.productCardContainer}>
+          <div key={product._id} className={styles.productCardContainer}>
             <ProductCard
               key={product.id}
-              id={product.id}
-              name={product.name}
+              title={product.title}
               price={product.price}
-              url={`product/${product.id}`}
-              image={product.image}
-              variant={product.variant}
+              url={`/product/${product.id}`}
+              images={product.media}
             />
           </div>
         ))}

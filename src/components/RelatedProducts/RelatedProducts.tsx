@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import styles from './relatedProducts.module.css';
 import { getRelatedProducts } from '@/lib/actions/actions';
-import Button from '@/components/Button/Button';
+import Loader from '@/components/Loader/Loader';
 import ProductCard from '@/components/ProductCard/ProductCard';
 import Slider from '@/components/Slider/Slider';
 
@@ -11,8 +11,26 @@ type RelatedProductsProps = {
   id: string;
 };
 
+type ProductType = {
+  _id: string;
+  id: string;
+  title: string;
+  price: number;
+  url: string;
+  media: string[];
+  variant: string;
+  category: string;
+  collections: string[];
+  colors: string[];
+  createdAt: string;
+  description: string;
+  sizes: string[];
+  tags: string[];
+  updatedAt: string;
+}
+
 const RelatedProducts: React.FC<RelatedProductsProps> = ({ id }) => {
-  const [products, setProducts] = useState(null);
+  const [products, setProducts] = useState<ProductType[] | null>(null);
 
   useEffect(() => {
     fetchRelatedProducts(id);
@@ -24,11 +42,7 @@ const RelatedProducts: React.FC<RelatedProductsProps> = ({ id }) => {
   }
 
   if (!products) {
-    return <p>Loading...</p>
-  }
-
-  if (!products) {
-    return <p>Loading...</p>
+    return <Loader />
   }
 
   return (
