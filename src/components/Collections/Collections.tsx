@@ -6,6 +6,7 @@ import Image from 'next/image';
 import styles from './collections.module.css';
 
 import { getCollections } from '@/lib/actions/actions';
+import Loader from '@/components/Loader/Loader';
 
 interface Collection {
   id: string;
@@ -18,13 +19,9 @@ interface Collection {
   updatedAt: string;
 }
 
-type CollectionsType = {
-  collection: Collection[];
-}
-
 const Collections = () => {
   const [loading, setLoading] = useState<boolean>(false);
-  const [collections, setCollections] = useState<CollectionsType>(null);
+  const [collections, setCollections] = useState<Collection[] | null>(null);
 
   useEffect(() => {
     fetchCollections();
@@ -33,8 +30,8 @@ const Collections = () => {
   const fetchCollections = async (): Promise<void> => {
     setLoading(true);
     try {
-      const collectionsResponse = await getCollections();
-      const filteredCollection = collectionsResponse.filter(collection => collection.slug !== 'featured');
+      const collectionsResponse: Collection[] = await getCollections();
+      const filteredCollection = collectionsResponse.filter((collection: Collection) => collection.slug !== 'featured');
       setCollections(filteredCollection);
     } catch (error) {
       console.error('Error fetching collections:', error);
@@ -44,7 +41,7 @@ const Collections = () => {
   }
 
   if (loading) {
-    <p>Loading...</p>
+    return <Loader />
   }
 
   return (
