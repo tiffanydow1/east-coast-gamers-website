@@ -1,3 +1,5 @@
+import { Collection } from "mongoose";
+
 type CollectionType = {
   _id: string;
   createdAt: string;
@@ -20,7 +22,7 @@ type ProductType = {
   media: string[];
   createdAt: string;
   colors: string[];
-  collections: string[];
+  collections: CollectionType[];
   category: string;
 };
 
@@ -39,7 +41,7 @@ type OrderColumnType = {
 }
 
 type OrderItemType = {
-  product: ProductType
+  product: ProductType;
   color: string;
   size: string;
   quantity: number;
