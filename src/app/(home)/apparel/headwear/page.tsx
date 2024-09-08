@@ -50,13 +50,13 @@ const Headwear = () => {
       <h1>Headwear</h1>
       <div className={styles.row}>
         <p>Discover our collection of high-quality headwear.</p>
-        {typeof productCount === 'number' && productCount > 8  && products.length < 9 && (
+        {typeof productCount === 'number' && productCount > 8  && products && products.length < 9 && (
           <Button
-          type="button"
-          variant="outlined"
-          text="See All"
-          onClick={() => {fetchProducts('headwear')}}
-        />
+            type="button"
+            variant="outlined"
+            text="See All"
+            onClick={() => {fetchProducts('headwear')}}
+          />
         )}
       </div>
 

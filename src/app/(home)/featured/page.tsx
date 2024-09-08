@@ -59,7 +59,7 @@ const Featured = () => {
       <h1>Featured Products</h1>
       <div className={styles.row}>
         <p>Discover our collection of featured products.</p>
-        {collection?.products.length > 8 && collection?.products.length < 9 && (
+        {collection && collection?.products.length > 8 && collection?.products.length < 9 && (
           <Button
             type="button"
             variant="outlined"
@@ -77,7 +77,7 @@ const Featured = () => {
         <p>No Featured Products available at this time.</p>
       )}
 
-      {!loading && collection?.products.length > 0 && (
+      {!loading && collection && collection?.products.length > 0 && (
         <>
           <div className={styles.gridContainer}>
             {Array.isArray(collection.products) && collection.products.map(product => (

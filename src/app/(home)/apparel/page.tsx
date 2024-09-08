@@ -47,7 +47,7 @@ const Apparel = () => {
       <h1>Apparel</h1>
       <div className={styles.row}>
         <p>Discover our collection of high-quality apparel ranging from hoodies to headwear.</p>
-        {typeof productCount === 'number' && productCount > 8 && products.length < 9 && (
+        {typeof productCount === 'number' && productCount > 8 && products && products.length < 9 && (
           <Button
             type="button"
             variant="outlined"

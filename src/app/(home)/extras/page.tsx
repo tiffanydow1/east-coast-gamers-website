@@ -47,7 +47,7 @@ const Extras = () => {
       <h1>Extras</h1>
       <div className={styles.row}>
         <p>Discover our collection of high-quality extras ranging from dice trays to dice bags.</p>
-        {typeof productCount === 'number' && productCount > 8 && products.length < 9 && (
+        {typeof productCount === 'number' && productCount > 8 && products && products.length < 9 && (
           <Button
             type="button"
             variant="outlined"

@@ -65,7 +65,7 @@ const Page = ({
         {!collection?.description && (
           <p>Discover our {collection?.title} collection.</p>
         )}
-        {typeof productCount === 'number' && productCount > 12  && collection.products.length < 13 && (
+        {typeof productCount === 'number' && productCount > 12  && collection &&  collection.products.length < 13 && (
           <Button
           type="button"
           variant="outlined"
@@ -79,7 +79,7 @@ const Page = ({
         <Loader />
       )}
 
-      {!loading && collection?.products?.length > 0 && (
+      {!loading && collection && collection?.products?.length > 0 && (
         <>
           <div className={styles.gridContainer}>
             {Array.isArray(collection?.products) && collection?.products.length > 0 && collection?.products.map(product => (
