@@ -1,8 +1,10 @@
 'use client'
 
-import { ColumnDef } from '@tanstack/react-table';
-import Delete from '../../components/Delete/Delete';
 import Link from 'next/link';
+import { ColumnDef } from '@tanstack/react-table';
+
+import { CollectionType } from '@/lib/types';
+import Delete from '../../components/Delete/Delete';
 
 export const columns: ColumnDef<CollectionType>[] = [
   {

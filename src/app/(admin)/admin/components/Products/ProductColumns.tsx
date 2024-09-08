@@ -1,6 +1,7 @@
 'use client';
 
 import { ColumnDef } from '@tanstack/react-table';
+import { ProductType } from '@/lib/types';
 import Delete from '../Delete/Delete';
 import Link from 'next/link';
 

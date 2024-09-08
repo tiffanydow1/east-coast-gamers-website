@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from 'react';
 
+import { CollectionType } from '@/lib/types';
+
 import Loader from '../../components/Loader/Loader';
 import CollectionForm from '../../components/Collections/CollectionsForm';
 

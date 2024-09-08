@@ -17,6 +17,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { CollectionType, ProductType } from '@/lib/types';
 import ImageUpload from "../../components/ImageUpload/ImageUpload";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";

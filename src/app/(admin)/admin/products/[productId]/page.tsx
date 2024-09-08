@@ -1,5 +1,6 @@
 "use client"
 
+import { ProductType } from '@/lib/types';
 import Loader from '../../components/Loader/Loader';
 import ProductForm from '../../components/Products/ProductForm';
 import React, { useEffect, useState } from 'react'

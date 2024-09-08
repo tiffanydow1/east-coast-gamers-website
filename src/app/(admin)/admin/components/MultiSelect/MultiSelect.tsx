@@ -9,6 +9,7 @@ import {
 } from '@/components/ui/command';
 import { useState } from 'react';
 import { Badge } from '@/components/ui/badge';
+import { CollectionType } from '@/lib/types';
 import { X } from 'lucide-react';
 
 interface MultiSelectProps {

@@ -28,7 +28,7 @@ const sampleProducts: Product[] = [
     name: 'Sample Product 2',
     price: '$150',
     url: '/apparel',
-    image: imgSrc,
+    image: '',
     variant: 'green'
   },
   {
@@ -36,7 +36,7 @@ const sampleProducts: Product[] = [
     name: 'Sample Product 3',
     price: '$200',
     url: '/apparel',
-    image: imgSrc,
+    image: '',
     variant: 'red'
   },
   {
@@ -44,7 +44,7 @@ const sampleProducts: Product[] = [
     name: 'Sample Product 4',
     price: '$50',
     url: '/apparel',
-    image: imgSrc,
+    image: '',
     variant: 'blue'
   },
   {
@@ -52,7 +52,7 @@ const sampleProducts: Product[] = [
     name: 'Sample Product 5',
     price: '$200',
     url: '/extras',
-    image: imgSrc,
+    image: '',
     variant: 'blue'
   },
   {
@@ -60,7 +60,7 @@ const sampleProducts: Product[] = [
     name: 'Sample Product 6',
     price: '$45',
     url: '/collections/classic-vintage',
-    image: imgSrc,
+    image: '',
     variant: 'plaid'
   },
   {
@@ -68,7 +68,7 @@ const sampleProducts: Product[] = [
     name: 'Sample Product 7',
     price: '$55',
     url: '/custom',
-    image: imgSrc,
+    image: '',
     variant: 'orange'
   },
   {
@@ -76,7 +76,7 @@ const sampleProducts: Product[] = [
     name: 'Sample Product 8',
     price: '$100',
     url: '/extras/bags',
-    image: imgSrc,
+    image: '',
     variant: 'black'
   },
 ];
