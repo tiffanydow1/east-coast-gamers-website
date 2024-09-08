@@ -73,7 +73,7 @@ const FeaturedProducts: React.FC = () => {
           <p>No Featured Products available at this time.</p>
         )}
 
-        {!loading && collection?.products?.length > 0 && (
+        {!loading && collection && collection?.products?.length > 0 && (
           <div className={styles.gridContainer}>
             {Array.isArray(collection?.products) && collection?.products.length > 0 && collection?.products.map(product => (
               <ProductCard
