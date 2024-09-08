@@ -1,4 +1,5 @@
 type CollectionType = {
+  _id: string;
   createdAt: string;
   description: string;
   image: string;
