@@ -17,7 +17,7 @@ interface Item {
   title: string;
   description: string;
   price: number;
-  media: string[];
+  media: string;
 }
 
 
@@ -36,8 +36,6 @@ const CartItem: React.FC<CartItemProps> = ({
   decrease,
   close
 }) => {
-  console.log(product, 'product')
-
   return (
     <div className={styles.container}>
       <div className={styles.leftSection}>
