@@ -13,8 +13,8 @@ type ProductType = {
 interface CartItem {
   item: ProductType;
   quantity: number;
-  color?: string | null;
-  size?: string | null;
+  color: string;
+  size: string;
 }
 
 interface CartStore {
@@ -50,7 +50,6 @@ const useCart = create(
         toast.success('Item added to cart', { icon: '🛒' });
       },
       removeItem: (idToRemove: String) => {
-        console.log('inside remove item')
         const newCartItems = get().cartItems.filter(
           (cartItem) => cartItem.item.id !== idToRemove
         );

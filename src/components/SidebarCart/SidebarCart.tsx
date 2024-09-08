@@ -9,6 +9,7 @@ const SidebarCart = () => {
   const cart = useCart();
 
   const subtotal = cart.cartItems.reduce((total, item) => total + item.item.price, 0);
+  console.log(cart.cartItems, 'cart items')
   return (
     <div className={`${styles.sidebar} ${cart.isSideCartOpen ? styles.visible : ''}`}>
       <div className={styles.wrapper}>

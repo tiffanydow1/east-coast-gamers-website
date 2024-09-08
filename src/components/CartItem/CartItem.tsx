@@ -20,7 +20,6 @@ interface Item {
   media: string;
 }
 
-
 interface CartItemProps {
   product: Product;
   remove: (id: string) => void;
