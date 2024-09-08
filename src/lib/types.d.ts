@@ -29,3 +29,18 @@ type CustomerType = {
   name: string;
   email: string;
 }
+
+type OrderColumnType = {
+  _id: string;
+  customer: string;
+  products: number;
+  totalAmount: number;
+  createdAt: string;
+}
+
+type OrderItemType = {
+  product: ProductType
+  color: string;
+  size: string;
+  quantity: number;
+}
