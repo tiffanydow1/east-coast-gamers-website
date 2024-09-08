@@ -11,7 +11,7 @@ import { DataTable } from '../components/DataTable/DataTable';
 import { columns } from "../components/Products/ProductColumns";
 
 type ProductType = {
-  id: string;
+  _id: string;
   title: string;
   description: string;
   updatedAt: string;
