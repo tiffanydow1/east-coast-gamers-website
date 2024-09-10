@@ -13,7 +13,7 @@ const Orders = () => {
 
   const getOrders = async () => {
     try {
-      const res = await fetch(`http://localhost:3000/api/orders`)
+      const res = await fetch(`east-coast-gamers-website-git-076cf3-tiffanys-projects-67ddbe1b.vercel.app/api/orders`)
       const data = await res.json()
       setOrders(data)
       setLoading(false)
