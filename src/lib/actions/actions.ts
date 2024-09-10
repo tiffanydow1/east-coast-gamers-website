@@ -5,7 +5,7 @@ import { connectToDB } from '../mongoDB';
 
 export const getCollections = async (populateProducts = false) => {
   const queryParam = populateProducts ? '?populateProducts=true' : '';
-  const collections = await fetch(`http://localhost:3000/api/collections${queryParam}`)
+  const collections = await fetch(`${process.env.VERCEL_URL}/api/collections${queryParam}`)
   return await collections.json()
 }
 
@@ -18,7 +18,7 @@ export const getCollectionDetails = async (collectionId: string) => {
 export const getCollectionBySlug = async (slug: string, limit?: number) => {
   try {
     const limitQuery = limit ? `limit=${limit}` : '';
-    const response = await fetch(`http://localhost:3000/api/collections/${slug}${limitQuery ? `?${limitQuery}` : ''}`);
+    const response = await fetch(`${process.env.VERCEL_URL}/api/collections/${slug}${limitQuery ? `?${limitQuery}` : ''}`);
 
     if (!response.ok) {
       throw new Error('Failed to fetch collections');
@@ -38,14 +38,14 @@ export const getProducts = async (category = '', tag = '', limit?: number) => {
   const limitQuery = limit ? `limit=${limit}` : '';
   const query = [categoryQuery, tagQuery, limitQuery].filter(Boolean).join('&');
 
-  const url = `http://localhost:3000/api/products${query ? `?${query}` : ''}`;
+  const url = `${process.env.VERCEL_URL}/api/products${query ? `?${query}` : ''}`;
   const response = await fetch(url);
   const data = await response.json();
   return data;
 }
 
 export const getProductDetails = async (productId: string) => {
-  const product = await fetch(`http://localhost:3000/api/products/${productId}`)
+  const product = await fetch(`${process.env.VERCEL_URL}/api/products/${productId}`)
   return await product.json()
 }
 
@@ -60,7 +60,7 @@ export const getSearchedProducts = async (query: string) => {
 // }
 
 export const getRelatedProducts = async (productId: string) => {
-  const relatedProducts = await fetch(`http://localhost:3000/api/products/${productId}/related`)
+  const relatedProducts = await fetch(`${process.env.VERCEL_URL}/api/products/${productId}/related`)
   return await relatedProducts.json()
 }
 
