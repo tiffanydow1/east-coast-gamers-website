@@ -3,7 +3,7 @@ import Order from '../models/Order';
 
 import { connectToDB } from '../mongoDB';
 
-const apiUrl = process.env.VERCEL_URL === 'production'
+const apiUrl = process.env.NODE_ENV === 'production'
   ? `https://${process.env.VERCEL_URL}`
   : 'http://localhost:3000';
 

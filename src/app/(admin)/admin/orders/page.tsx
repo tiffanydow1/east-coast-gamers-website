@@ -11,7 +11,7 @@ const Orders = () => {
   const [loading, setLoading] = useState(true);
   const [orders, setOrders] = useState([]);
 
-  const apiUrl = process.env.VERCEL_URL === 'production'
+  const apiUrl = process.env.NODE_ENV === 'production'
     ? `https://${process.env.VERCEL_URL}/api/orders`
     :  'http://localhost:3000/api/orders';
 

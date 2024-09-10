@@ -5,7 +5,6 @@ import { NextRequest, NextResponse } from 'next/server';
 import { stripe } from '@/lib/stripe';
 
 export const POST = async (req: NextRequest) => {
-  console.log('inside the webhooks POST request')
   try {
     const rawBody = await req.text()
     const signature = req.headers.get("Stripe-Signature") as string
@@ -16,11 +15,8 @@ export const POST = async (req: NextRequest) => {
       process.env.STRIPE_WEBHOOK_SECRET!
     )
 
-    console.log(event, 'event')
-
     if (event.type === "checkout.session.completed") {
       const session = event.data.object
-      console.log(session, 'session')
 
       const customerInfo = {
         name: session?.customer_details?.name,
