@@ -3,22 +3,26 @@ import Order from '../models/Order';
 
 import { connectToDB } from '../mongoDB';
 
+const apiUrl = process.env.VERCEL_URL === 'production'
+  ? `https://${process.env.VERCEL_URL}`
+  : 'http://localhost:3000';
+
 export const getCollections = async (populateProducts = false) => {
   const queryParam = populateProducts ? '?populateProducts=true' : '';
-  const collections = await fetch(`${process.env.VERCEL_URL}/api/collections${queryParam}`)
+  const collections = await fetch(`${apiUrl}/api/collections${queryParam}`)
   return await collections.json()
 }
 
 export const getCollectionDetails = async (collectionId: string) => {
   console.log('inslide getcollectiondetails', collectionId);
-  const collection = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/collections/${collectionId}`)
+  const collection = await fetch(`${apiUrl}/api/collections/${collectionId}`)
   return await collection.json
 }
 
 export const getCollectionBySlug = async (slug: string, limit?: number) => {
   try {
     const limitQuery = limit ? `limit=${limit}` : '';
-    const response = await fetch(`${process.env.VERCEL_URL}/api/collections/${slug}${limitQuery ? `?${limitQuery}` : ''}`);
+    const response = await fetch(`${apiUrl}/api/collections/${slug}${limitQuery ? `?${limitQuery}` : ''}`);
 
     if (!response.ok) {
       throw new Error('Failed to fetch collections');
@@ -38,19 +42,19 @@ export const getProducts = async (category = '', tag = '', limit?: number) => {
   const limitQuery = limit ? `limit=${limit}` : '';
   const query = [categoryQuery, tagQuery, limitQuery].filter(Boolean).join('&');
 
-  const url = `${process.env.VERCEL_URL}/api/products${query ? `?${query}` : ''}`;
+  const url = `${apiUrl}/api/products${query ? `?${query}` : ''}`;
   const response = await fetch(url);
   const data = await response.json();
   return data;
 }
 
 export const getProductDetails = async (productId: string) => {
-  const product = await fetch(`${process.env.VERCEL_URL}/api/products/${productId}`)
+  const product = await fetch(`${apiUrl}/api/products/${productId}`)
   return await product.json()
 }
 
 export const getSearchedProducts = async (query: string) => {
-  const searchedProducts = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/search/${query}`)
+  const searchedProducts = await fetch(`${apiUrl}/search/${query}`)
   return await searchedProducts.json()
 }
 
@@ -60,7 +64,7 @@ export const getSearchedProducts = async (query: string) => {
 // }
 
 export const getRelatedProducts = async (productId: string) => {
-  const relatedProducts = await fetch(`${process.env.VERCEL_URL}/api/products/${productId}/related`)
+  const relatedProducts = await fetch(`${apiUrl}/api/products/${productId}/related`)
   return await relatedProducts.json()
 }
 

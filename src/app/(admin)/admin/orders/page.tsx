@@ -11,9 +11,13 @@ const Orders = () => {
   const [loading, setLoading] = useState(true);
   const [orders, setOrders] = useState([]);
 
+  const apiUrl = process.env.VERCEL_URL === 'production'
+    ? `https://${process.env.VERCEL_URL}/api/orders`
+    :  'http://localhost:3000/api/orders';
+
   const getOrders = async () => {
     try {
-      const res = await fetch(`${process.env.VERCEL_URL}/api/orders`)
+      const res = await fetch(apiUrl)
       const data = await res.json()
       setOrders(data)
       setLoading(false)
