@@ -69,6 +69,7 @@ export const GET = async (req: NextRequest) => {
     await connectToDB();
 
     const url = new URL(req.url);
+    console.log(url, 'urllll')
     const category = url.searchParams.get('category');
     const tag = url.searchParams.get('tag');
     const limitParam = url.searchParams.get('limit');
@@ -95,6 +96,7 @@ export const GET = async (req: NextRequest) => {
     }
 
     const products = await productsQuery;
+    console.log(products, 'products')
     return NextResponse.json({ totalCount, products }, { status: 200 });
   } catch (err) {
     console.log('[products_GET]', err);
