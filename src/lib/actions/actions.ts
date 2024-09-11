@@ -4,7 +4,7 @@ import Order from '../models/Order';
 import { connectToDB } from '../mongoDB';
 
 const apiUrl = process.env.NODE_ENV === 'production'
-  ? `https://${process.env.NEXT_PUBLIC_API_URL}`
+  ? `${process.env.NEXT_PUBLIC_API_URL}`
   : 'http://localhost:3000';
 
 export const getCollections = async (populateProducts = false) => {
