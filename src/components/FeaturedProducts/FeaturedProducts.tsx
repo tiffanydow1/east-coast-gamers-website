@@ -41,7 +41,7 @@ const FeaturedProducts: React.FC = () => {
     setLoading(true);
     try {
       const data = await getCollectionBySlug(slug, limit);
-      setCollection(data);
+      setCollection(data.collection);
     } catch (error) {
       console.error('Error fetching collection:', error);
     } finally {
