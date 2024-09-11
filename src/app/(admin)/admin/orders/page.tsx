@@ -12,7 +12,7 @@ const Orders = () => {
   const [orders, setOrders] = useState([]);
 
   const apiUrl = process.env.NODE_ENV === 'production'
-    ? `https://${process.env.VERCEL_URL}/api/orders`
+    ? `https://${process.env.NEXT_PUBLIC_API_URL}/api/orders`
     :  'http://localhost:3000/api/orders';
 
   const getOrders = async () => {
